@@ -1,0 +1,126 @@
+.newshub {
+    background-color: var(--cover-color);
+    width: 97%;
+    height: 1000px;
+    margin: 10px auto;
+    border-radius: 44px;
+
+}
+/* Header */
+/* Navbar */
+
+.newshub_header {
+    width: 97%;
+    margin: auto;
+    padding: 10px;
+}
+
+.newshub_header_nav {
+    width: 100%;
+    background-color: var(--primary-color);
+    margin: auto;
+    border-radius: 44px;
+    display: flex;
+    justify-content:space-between;
+    box-shadow: 0px 1px 1px 1px var(--border-color);
+}
+
+.nav_list,
+.nav_list_search {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 0 2%;
+    
+}
+
+.nav_items:first-child {
+    padding: 0 10px;
+}
+
+.nav_items>span {
+    padding: 0 10px;
+    display: inline-block;
+    align-content: center;
+    height: 20px;
+    border-left: 1px solid var(--border-color);
+}
+
+.nav_items:last-child>span {
+    padding-right: 0;
+}
+
+.nav_logo {
+    width: 100px;
+}
+
+.nav_weather {
+    color: #7dbcff;
+}
+
+.nav_list_search {
+    font-size: 0.8rem;
+}
+
+.nav_items_search {
+    padding: 0 10px;
+    align-content: center;
+    height: 20px;
+}
+
+.nav_items_search:first-child {
+    border-left: 1px solid var(--border-color);
+}
+
+.nav_search_input {
+    padding-left: 5px;
+    border-radius: 44px;
+}
+
+/* Menu */
+.newshub_header_menu {
+    width: 85%;
+    height: 30px;
+    background-color: var(--primary-color);
+    margin: 10px auto;
+    border-radius: 44px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    box-shadow: 0px 1px 1px 1px var(--border-color);
+}
+
+.icon_cover {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #dcd8d8;
+    align-content: center;
+    padding: 0 auto;
+    position: relative;
+    
+}
+
+.icon_home {
+    color: #454444;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu_list{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    font-size: 0.9rem;
+    justify-content: space-around;
+}
+
+.menu_bars {
+    font-size: 0.8rem;
+    margin-right: 3%;
+}
+ 

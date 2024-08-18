@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NEWSHub</title>
 </head>
 <body>
-    <h1>Hello Word</h1>
+    <div class="newshub">
+        <header class="newshub_header">
+            <!-- Navbar -->
+            <div class="newshub_header_nav">
+                <ul class="nav_list">
+                    <li class="nav_items"><img src="./image/background/logo_newshub_black.png" alt="logo" class="nav_logo"></li>
+                    <li class="nav_items"><span>Thứ năm, 15/8/2024</span></li>
+                    <li class="nav_items">
+                        <span>
+                            TP.HCM
+                            <i class="nav_down fa-solid fa-chevron-down"></i>
+                        </span>
+                    </li>
+                    <li class="nav_items"><span><i class="nav_weather fa-solid fa-cloud"></i> 33</span><sup>o</sup></li>
+                </ul>
+                <ul class="nav_list_search">
+                    <li class="nav_items_search">
+                        <input type="text" class="nav_search_input" placeholder="Tìm kiếm">
+                        <i class="nav_search fa-solid fa-magnifying-glass"></i>
+                    </li>
+                    <li class="nav_items_search">
+                        <i class="nav_user fa-regular fa-user"></i> Đăng nhập
+                    </li>
+                    <li class="nav_items_search">
+                        <i class="nav_notify fa-regular fa-bell"></i>
+                    </li>
+                </ul>
+            </div>
+            <!-- Menu -->
+            <div class="newshub_header_menu">
+                <ul class="menu_list">
+                    <li class="menu_items">
+                        <div class="menu_home icon_cover">
+                            <i class="icon_home fa-solid fa-house"></i>
+                        </div>
+                    </li>
+                    <li class="menu_items">Thời sự</li>
+                    <li class="menu_items">Thế giới</li>
+                    <li class="menu_items">Video</li>
+                    <li class="menu_items">Kinh doanh</li>
+                    <li class="menu_items">Pháp luật</li>
+                    <li class="menu_items">Khoa học</li>
+                    <li class="menu_items">Giải trí</li>
+                    <li class="menu_items">Thể thao</li>
+                    <li class="menu_items">Giáo dục</li>
+                    <li class="menu_items">Sức khỏe</li>
+                </ul>
+                <i class="menu_bars fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
 </body>
 </html>
