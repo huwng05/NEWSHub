@@ -3,6 +3,7 @@
     --primary-color: #fff;
     --cover-color: rgba(255,255,255,0.6);
     --border-color: #999;
+    --icon-cover: rgba(209, 206, 206, 1);
 }
 
 * {
@@ -22,4 +23,3 @@ body {
 ul {
     list-style: none;
 }
-
