@@ -23,3 +23,13 @@ body {
 ul {
     list-style: none;
 }
+
+li {
+    unicode-bidi:normal
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: #999;
+}
