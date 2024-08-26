@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/reponsive.css">
     <title>NEWSHub</title>
 </head>
 <body>
@@ -17,34 +18,111 @@
                     <li class="nav_items"><img src="./image/background/logo_newshub_black.png" alt="logo" class="nav_logo"></li>
                     <li class="nav_items"><span>Thứ năm, 15/8/2024</span></li>
                     <li class="nav_items">
-                        <span>
+                        <span class="nav_address">
                             TP.HCM
-                            <i class="nav_down fa-solid fa-chevron-down"></i>
+                            <span class="nav_down">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                            <span class="nav_up">
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </span>
+                            <ul class="nav_select_address">
+                                <li class="nav_select_item">
+                                    <p>TP.HCM</p>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                                <li class="nav_select_item">
+                                    <p>Hà Nội</p>
+                                    <!-- <i class="fa-solid fa-check"></i> -->
+                                </li>
+                            </ul>
                         </span>
                     </li>
                     <li class="nav_items"><span><i class="nav_weather fa-solid fa-cloud"></i> 33</span><sup>o</sup></li>
                 </ul>
                 <ul class="nav_list_search">
                     <li class="nav_items_search">
-                        <input type="text" class="nav_search_input" placeholder="Tìm kiếm">
                         <i class="nav_search fa-solid fa-magnifying-glass"></i>
                     </li>
                     <li class="nav_items_search">
-                        <i class="nav_user fa-regular fa-user"></i> Đăng nhập
+                        <i class="nav_user fa-regular fa-user"></i> 
+                        <span>Đăng nhập</span>
                     </li>
                     <li class="nav_items_search">
                         <i class="nav_notify fa-regular fa-bell"></i>
+                        <div class="notify_table">
+                            <div class="notify_container">
+                                <header class="header__notify-header">
+                                    <h3>Thông báo mới nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <div class="header__notify-sup-info">
+                                                <p class="header__notify-descriotion">Kinh doanh</p>
+                                                <p class="time_notify">2h trước</p>
+                                            </div>
+                                            <h3 class="header__notify-name">Hành trình của CEO trước khi bị bắt</h3>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
             <!-- Menu -->
             <div class="newshub_header_menu">
+                <div class="icon_cover">
+                    <i class="icon_home fa-solid fa-house"></i>
+                </div>
                 <ul class="menu_list">
-                    <li class="menu_items">
-                        <div class="menu_home icon_cover">
-                            <i class="icon_home fa-solid fa-house"></i>
-                        </div>
-                    </li>
                     <li class="menu_items">Thời sự</li>
                     <li class="menu_items">Thế giới</li>
                     <li class="menu_items">Video</li>
