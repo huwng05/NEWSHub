@@ -3,7 +3,7 @@
     width: 97%;
     margin: 10px auto;
     border-radius: 25px;
-
+    padding-bottom: 10px;
 }
 /* Header */
 /* Navbar */
@@ -656,7 +656,7 @@
 
 .newshub_sp_news_item {
     width: 100%;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -680,7 +680,6 @@
 
 .content_img {
     width:40%;
-    transform: translateY(-3px);
     object-fit: cover;
 }
 
@@ -698,6 +697,10 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     margin-left: 10px;
+}
+
+.newshub_sp_news_item+.newshub_sp_news_item {
+    padding-top: 10px;
 }
 
 .newshub_sp_news_item::after {
