@@ -265,12 +265,45 @@
     margin: 0 10px;
     text-align: center;
     flex-shrink: 0;
+    position: relative;
+}
+
+.menu_items_support {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 999;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 1px 1px var(--border-color);
+    display: none;
+}
+
+.menu_items:hover {
+    cursor: pointer;
+}
+
+.menu_items_item {
+    width: 100%;
+}
+
+.menu_items_item:hover {
+    background-color: #c1c0c0;
+}
+
+.menu_items:hover .menu_items_support {
+    display: block;
 }
 
 .menu_bars {
     font-size: 0.8rem;
     margin: 10px;
 }
+
+
 
 /* Body */
 /* News hot */

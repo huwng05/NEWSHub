@@ -1,7 +1,8 @@
 @media screen and (max-width: 1300px) {
     /* Menu reponsive */
     .menu_list {
-        overflow: auto;
+        overflow:auto;
+        position: relative;
     }
 
     .menu_list::-webkit-scrollbar {
