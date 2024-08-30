@@ -33,4 +33,16 @@ li {
 a {
     text-decoration: none;
     list-style: none;
+    color: #000;
+}
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0; 
+        top: 50%;
+    }
+    to {
+        opacity: 1; 
+        top: calc(100% + 2px);
+    }
 }

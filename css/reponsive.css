@@ -2,7 +2,6 @@
     /* Menu reponsive */
     .menu_list {
         overflow:auto;
-        position: relative;
     }
 
     .menu_list::-webkit-scrollbar {
@@ -12,6 +11,14 @@
 
     .newshub {
         border-radius: 25px !important;
+    }
+
+    .menu_list>li{
+        color: black;
+    }
+
+    .menu_list>li:hover .menu_items_support {
+        display:none;
     }
 }
 
@@ -41,18 +48,10 @@
     .widget {
        margin: 0; 
     }
-
-    .newshub_body_header_left {
-        width: 100%;
-    }
 }
 
 
 @media screen and (max-width: 720px) {
-    *{
-        font-size: 1rem;
-    }
-
     /* Navbar */
     .nav_items {
         display: none;
@@ -99,6 +98,96 @@
 
     .nav_items:first-child {
         display: block;
+    }
+
+    .menu_container  {
+        width: 120vw;
+        height: 100vh;
+        border-radius: 25px;
+        margin: 0;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 40px;
+        /* display: block; */
+    }
+
+    .menu_container_cover {
+        width: calc(100% - 40%);
+        margin-left: 40%;
+        border-radius: 25px;
+        padding: 10px;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    .menu_container_header {
+        display: block;
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        margin-top: 10px;
+        align-items: last baseline;
+    }
+
+    .menu_container_header>.xmark {
+        font-size: 30px;
+        position: relative;
+        top: -4px;
+    }
+
+    .menu_container_footer {
+        display: block;
+    }
+
+    .container_menu_logo {
+        width: 50%;
+    }
+
+    .menu_container h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu_container_list {
+        width: 100%;
+        text-align: start;
+        margin: 10px 0;  
+    }
+
+    .menu_space {
+        height: 1px;
+        width: 95%;
+        background-color: #999;
+
+    }
+
+    .menu_container_item {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .menu_container_item:hover {
+        background-color: #d4d3d3;
+    }
+
+    .menu_container_scroll {
+        width: 100%;
+        height: calc(100% - 65px);
+        overflow: auto;
+    }
+
+    .menu_container_scroll::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+
+    .logo_menu {
+        width: 20px;
+        display: none;
+    }
+
+    .logo_title {
+        display: none;
     }
 
     /* body header */
@@ -304,5 +393,9 @@
 
     .newshub_footer_logo>img {
         width: 150px;
+    }
+
+    .newshub_footer_head .newshub_footer_menu:last-child::before {
+        display: none;
     }
 }
