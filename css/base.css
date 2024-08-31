@@ -46,3 +46,14 @@ a {
         top: calc(100% + 2px);
     }
 }
+
+@keyframes slideLeft {
+    form {
+        opacity: 0;
+        left: -50px;
+    }
+    to {
+        opacity: 1;
+        left: 40px;
+    }
+}
