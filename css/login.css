@@ -1,0 +1,283 @@
+
+body {
+    background-image: var(--background-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;   
+}
+
+.main {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main_bg {
+    width: calc(100% - 20px);
+    height: 95vh;
+    margin: 0 auto;
+    background-color: var(--cover-color);
+    position: relative;
+    border-radius: 44px;
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    margin: 0 auto;
+    height: 600px;
+    display: flex;
+    border-radius: 44px;
+}
+
+.login_container {
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    background-color: white;
+    width: 50%;
+}
+
+.container h2 {
+    color: rgb(91, 87, 87);
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+   font-family: sans-serif; 
+   margin: 10%;
+   margin-top: 35px;
+}
+
+.email-password_div {
+    display: flex;
+    background: white;
+    border: 1px solid  rgb(91, 87, 87);
+    width: 80%;
+    padding: 1px;
+    border-radius: 4px;
+    padding-right: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.error {
+    color: #b02a45;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.email-password_div:first-child {
+    margin-top: 8%;
+}
+
+.email-password_div input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.strong_div {
+    color: rgb(91, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+#hide {
+    display: none;
+}
+
+.strong_div, strong {
+    color: rgb(91, 87, 87);
+    font-weight: 100;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-size: 14px;
+}
+
+.logIn {
+    background: rgb(150, 143, 143);
+    opacity: 0.6;
+    border-radius: 4px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.logIn button:hover {
+    background: #b02a45;
+    transition: .1s linear ;
+}
+
+.logIn button {
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(150, 143, 143);
+    background: none;
+    color: white;
+    padding: 15px;
+    width: 100%;
+}
+
+#warning {
+    color: #b02a45;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.forgot {
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.forgot>a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.links_items {
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.links {
+    width: 40%;
+    border: 1px solid rgb(91, 87, 87);
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.links img {
+    width: 30px;
+    height: 28px;
+}
+
+.links p {
+    color: black;
+    padding: 5px;
+}
+
+.terms {
+    margin-top: 20%;
+    color: rgb(150, 143, 143);
+    font-size: 14px;
+    text-align: center;
+    margin: 12%;
+}
+
+.login_intro {
+    width: 50%;
+    background-color: #b02a45;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    position: relative;
+}
+
+.intro_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.intro_content h3 {
+    font-size:60px;
+}
+
+.intro_content span {
+    color: white;
+}
+
+.intro_content p {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    align-items: center;
+    align-content: center;
+    font-size: 20px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1240px) {
+    .links {
+        width: 55%;
+        margin-left: 12%;
+    }
+
+    .links_items {
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width: 1027px) {
+    .login_intro {
+        display: none;
+    }
+    
+    .content_topic {
+        width: 40%;
+    }
+
+    .login_container {
+        width: 100%;
+        border-radius: 44px;
+    }
+
+    .links_items {
+        margin-left: 10%;
+    }
+
+    @media screen and (max-width: 750px) {
+        .links_items {
+            margin-left: 10%;
+            font-size: 12px;
+        }
+
+        .logIn {
+            height: 5%;
+            width: 80%;
+        }
+
+
+    }
+
+    @media screen and (max-width: 550px) {
+        .links_items {
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .links {
+            margin: 0;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+       .container {
+             width: 97%;
+       }
+    }
+}

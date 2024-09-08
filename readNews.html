@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="shortcut icon" href="./image/background/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./image/background/logo.png">
     <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="./css/read.css">
     <title>NEWSHub</title>
-    <script src="./js/data.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="./js/read.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="newshub">
@@ -220,64 +222,156 @@
                 </div>
             </div>
         </header>
-        <!-- Newshub body -->
+
         <div class="newshub_body">
             <!-- Section 1 -->
-            <section class="newshub_body_header">
-                <!-- Section 1 left  -->
-                <div class="newshub_body_hot">
-                   <div class="newshub_image">
-                        <ul id="img_list" class="newshub_img">
-                            <!-- list img -->
-                        </ul> 
-                        <div class="btn_direction">
-                            <div id="scroll_up" class="btn_dir"><i class="fa-solid fa-caret-up"></i></div>
-                            <div id="scroll_down" class="btn_dir"><i class="fa-solid fa-caret-down"></i></div>
-                        </div>
-                   </div>
-                   <div class="newshub_contents">
-                        <ul id="list_content" class="newshub_content">
-                            <!-- list content -->
-                        </ul>
-                   </div>
-                </div>
-
-                <!-- Section 1 right (Clock) -->
-                <div class="newshub_clock">
-                    <div class="clock_outline">
-                        <div id="hour" class="clock_hour">07</div>
-                        <div class="clock_hour_wall">
-                            <div class="hour_wall"></div>
-                            <div class="hour_wall"></div>
-                        </div>
-                        <div id="min" class="clock_hour">30</div>
-                    </div>
-
-                    <div class="widget">
-                        <div class="simplize-widget-chart-overview">
-                            <script type="text/javascript" src="https://static.simplize.vn/static/widget/simplize-widget-v0.0.2.min.js" async>
-                            {"tickers":[{"ticker":"VCB","type":"stock"}],"default_time_frame":"1M","time_frames":["1M"],"theme":"dark","size":{"width":"400","height":"250"},"auto_size":false,"font":"Inter","text_color":"#F4F4F5","text_color_chart":"#F4F4F5","background_color":"#191919","tab_colors":{"active":"#006CEC","default":"#252525"},"chart_height":100,"show_price_chart":true,"show_fi":true,"chart_type":"candle","chart_line_color":"#EC8000","chart_candle_color":["#25B770","#E14040"],"fi":[]}
-                            </script>
-                            </div>
-                    </div>
-                </div>
-            </section>
             <section class="newshub_body_main">
                 <div class="newshub_main_head">
                     <div class="newshub_main_content">
-    
-                        <div id="subject_main" class="newshub_topic_out">
-                            <!-- news main left-->
+                        <!-- place to read news -->
+                        <div class="newshub_read">
+                            <div class="newhub_read_head">
+                                <p class="subject_header">Giáo dục</p>
+                                <p class="subject_date">Thứ 5, 15/8/2024</p>
+                            </div>
+                            <h1 class="newshub_read_title">Hơn 23 triệu học sinh bước vào năm học mới</h1>
+                            <ul class="newshub_read_content">
+                                <li class="content_normal">Hơn 23 triệu trẻ mầm non và học sinh đi khai giảng, trong năm học cả nước hoàn tất thay chương trình và sách giáo khoa ở phổ thông.</li>
+                                <li class="content_normal">Tại Hà Nội, đường phố nhộn nhịp từ hơn 6h khi gần 2,3 triệu học sinh các cấp đi khai giảng. Thủ đô là nơi có số học sinh và trường, lớp nhiều nhất cả nước.</li>
+                                <li class="content_normal">Thời tiết hôm nay nắng nóng, chừng 28-29 độ từ sáng sớm. Hầu hết trường tập trung học sinh vào lúc 6h30, khoảng 7h30-8h, thầy và trò sẽ bước vào tiết học đầu tiên.</li>
+                                <li class="content_normal">Tại trường Tiểu học Nguyễn Viết Xuân, quận Cầu Giấy, học sinh và thầy cô chung tâm trạng háo hức. Năm nay, trường lần đầu tuyển sinh với tổng 650 em. Ở cổng, giáo viên xếp thành hai hàng để chào đón học trò.</li>
+                                <li class="content_normal">Nhà cách trường vài chục mét nhưng từ 6h, Trần Tú Anh và Hồ Ngọc Thảo An, lớp 1A4, đã giục mẹ đưa đến trường.</li>
+                                <li class="content_normal"><img src="./image/img_news/imgs_main/entertainment_00.jpg" class="img_read" alt=""></li>
+                                <li class="content_normal">"Nghe tiếng nhạc rộn ràng từ trường nên con nên muốn đến sớm để gặp bạn bè mới và chụp ảnh", cô bé nói.</li>
+                                <li class="content_normal">Bà Vũ Thị Ánh Tuyết, Hiệu trưởng, cho biết lễ khai giảng có phần kết hợp đặc biệt giữa các thầy cô giáo, phụ huynh và học sinh với màn trống hội.</li>
+                                <li class="content_normal">Chị Nguyễn Thị Huyền, đại diện phụ huynh lớp 1A4, nói "háo hức không kém học sinh". Chị cũng mong chờ khoảnh khắc con và các bạn được xướng tên để vẫy cờ, hoa mừng năm học mới. "Tôi mong con sẽ có buổi lễ ý nghĩa, đáng nhớ cũng như 12 năm học suôn sẻ phía trước", chị nói.</li>
+                                <li class="content_normal">Đặng Ngọc Diệp, lớp 9A1, dự định đặt nguyện vọng 1 vào lớp 10 trường THPT Trần Phú, một trong những trường lấy điểm chuẩn cao nhất thành phố. Nữ sinh xác định đây là năm học quyết định, cần đầu tư và dành nhiều thời gian cho việc học hơn.</li>
+                            </ul>
+                            <div class="newshub_goback">
+                                <button class="btn_goback"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn_save"><i class="fa-regular fa-bookmark"></i><span>Lưu</span></button>
+                            </div>
+                            <!-- Opinion -->
+                            <div class="newshub_opinion">
+                                <h2 class="opinion">Bình luận</h2>
+                                <ul class="opinion_list">
+                                    <li class="opinion_user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="opinion_content">
+                                            <h3 class="opinion_name">Thái Hùng</h3>
+                                            <p class="opinion_comment">Các con náo nức đi khai giảng năm học mới, các bố mẹ cũng tất bật không kém. Chúc một năm học mới của các con gặt hái được nhiều thành công !</p>
+                                            <div class="opinion_footer">
+                                                <div class="btn_like">
+                                                    <button class="like"><i class="fa-regular fa-thumbs-up"></i><span>Like</span></button>
+                                                    <p class="count_like"><i class="fa-solid fa-thumbs-up"></i><span>53</span></p>
+                                                    <div class="answer">Trả lời</div>
+                                                </div>
+                                                <p>2h trước</p>
+                                            </div>
+                                            <div class="your_opinion">
+                                                <div class="wall_opinion"></div>
+                                                <div class="my_opinion">
+                                                    <textarea placeholder="Bình luận của bạn" class="my_comment"></textarea>
+                                                    <button class="share"><i class="fa-solid fa-share"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="opinion_user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="opinion_content">
+                                            <h3 class="opinion_name">Thúy An</h3>
+                                            <p class="opinion_comment">Buổi sáng mai hôm ấy, một buổi mai đầy sương thu và gió lạnh. Mẹ tôi âu yếm nắm tay tôi dẫn đi trên con đường làng dài và hẹp. Con đường này tôi đã quen đi lại lắm lần, nhưng lần này tự nhiên tôi thấy lạ. Cảnh vật chung quanh tôi đều thay đổi, vì chính lòng tôi đang có sự thay đổi lớn: Hôm nay tôi đi học</p>
+                                            <div class="opinion_footer">
+                                                <div class="btn_like">
+                                                    <button class="like"><i class="fa-regular fa-thumbs-up"></i><span>Like</span></button>
+                                                    <p class="count_like"><i class="fa-solid fa-thumbs-up"></i><span>53</span></p>
+                                                    <div class="answer">Trả lời</div>
+                                                </div>
+                                                <p>2h trước</p>
+                                            </div>
+                                            <div class="your_opinion">
+                                                <div class="wall_opinion"></div>
+                                                <div class="my_opinion">
+                                                    <textarea placeholder="Bình luận của bạn" class="my_comment"></textarea>
+                                                    <button class="share"><i class="fa-solid fa-share"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="opinion_user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="opinion_content">
+                                            <h3 class="opinion_name">Minh Quân</h3>
+                                            <p class="opinion_comment">Các con náo nức đi khai giảng năm học mới, các bố mẹ cũng tất bật không kém. Chúc một năm học mới của các con gặt hái được nhiều thành công !</p>
+                                            <div class="opinion_footer">
+                                                <div class="btn_like">
+                                                    <button class="like"><i class="fa-regular fa-thumbs-up"></i><span>Like</span></button>
+                                                    <p class="count_like"><i class="fa-solid fa-thumbs-up"></i><span>53</span></p>
+                                                    <div class="answer">Trả lời</div>
+                                                </div>
+                                                <p>2h trước</p>
+                                            </div>
+                                            <div class="your_opinion">
+                                                <div class="wall_opinion"></div>
+                                                <div class="my_opinion">
+                                                    <textarea placeholder="Bình luận của bạn" class="my_comment"></textarea>
+                                                    <button class="share"><i class="fa-solid fa-share"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="opinion_user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="opinion_content">
+                                            <h3 class="opinion_name">Thái Hùng</h3>
+                                            <p class="opinion_comment">Các con náo nức đi khai giảng năm học mới, các bố mẹ cũng tất bật không kém. Chúc một năm học mới của các con gặt hái được nhiều thành công !</p>
+                                            <div class="opinion_footer">
+                                                <div class="btn_like">
+                                                    <button class="like"><i class="fa-regular fa-thumbs-up"></i><span>Like</span></button>
+                                                    <p class="count_like"><i class="fa-solid fa-thumbs-up"></i><span>53</span></p>
+                                                    <div class="answer">Trả lời</div>
+                                                </div>
+                                                <p>2h trước</p>
+                                            </div>
+                                            <div class="your_opinion">
+                                                <div class="wall_opinion"></div>
+                                                <div class="my_opinion">
+                                                    <textarea placeholder="Bình luận của bạn" class="my_comment"></textarea>
+                                                    <button class="share"><i class="fa-solid fa-share"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="opinion_user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="opinion_content">
+                                            <h3 class="opinion_name">Thái Hùng</h3>
+                                            <p class="opinion_comment">Tuyệt!</p>
+                                            <div class="opinion_footer">
+                                                <div class="btn_like">
+                                                    <button class="like"><i class="fa-regular fa-thumbs-up"></i><span>Like</span></button>
+                                                    <p class="count_like"><i class="fa-solid fa-thumbs-up"></i><span>53</span></p>
+                                                    <div class="answer">Trả lời</div>
+                                                </div>
+                                                <p>2h trước</p>
+                                            </div>
+                                            <div class="your_opinion">
+                                                <div class="wall_opinion"></div>
+                                                <div class="my_opinion">
+                                                    <textarea placeholder="Bình luận của bạn" class="my_comment"></textarea>
+                                                    <button class="share"><i class="fa-solid fa-share"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-
                         <!-- Right -->
                         <ul id="newshub_list" class="newshub_sp_news">
                             <!-- list menu right -->
                         </ul>
-                    </div>
-                    <!-- Section -->
-                    <div id="beside" class="newshub_beside">
-                        <!-- Beside -->
                     </div>
                 </div>
             </section>
@@ -363,6 +457,6 @@
 
             <div class="newshub_footer_footer">&copy;2024 Bản quyền thuộc về NEWSHub</div>
         </footer>
-        <script src="./js/main.js" type="text/javascript"></script>
     </div>
 </body>
+</html>

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="shortcut icon" href="./image/background/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./image/background/logo.png">
     <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="./css/search.css">
     <title>NEWSHub</title>
-    <script src="./js/data.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="./js/read.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="newshub">
@@ -220,64 +222,77 @@
                 </div>
             </div>
         </header>
-        <!-- Newshub body -->
+
         <div class="newshub_body">
             <!-- Section 1 -->
-            <section class="newshub_body_header">
-                <!-- Section 1 left  -->
-                <div class="newshub_body_hot">
-                   <div class="newshub_image">
-                        <ul id="img_list" class="newshub_img">
-                            <!-- list img -->
-                        </ul> 
-                        <div class="btn_direction">
-                            <div id="scroll_up" class="btn_dir"><i class="fa-solid fa-caret-up"></i></div>
-                            <div id="scroll_down" class="btn_dir"><i class="fa-solid fa-caret-down"></i></div>
-                        </div>
-                   </div>
-                   <div class="newshub_contents">
-                        <ul id="list_content" class="newshub_content">
-                            <!-- list content -->
-                        </ul>
-                   </div>
-                </div>
-
-                <!-- Section 1 right (Clock) -->
-                <div class="newshub_clock">
-                    <div class="clock_outline">
-                        <div id="hour" class="clock_hour">07</div>
-                        <div class="clock_hour_wall">
-                            <div class="hour_wall"></div>
-                            <div class="hour_wall"></div>
-                        </div>
-                        <div id="min" class="clock_hour">30</div>
-                    </div>
-
-                    <div class="widget">
-                        <div class="simplize-widget-chart-overview">
-                            <script type="text/javascript" src="https://static.simplize.vn/static/widget/simplize-widget-v0.0.2.min.js" async>
-                            {"tickers":[{"ticker":"VCB","type":"stock"}],"default_time_frame":"1M","time_frames":["1M"],"theme":"dark","size":{"width":"400","height":"250"},"auto_size":false,"font":"Inter","text_color":"#F4F4F5","text_color_chart":"#F4F4F5","background_color":"#191919","tab_colors":{"active":"#006CEC","default":"#252525"},"chart_height":100,"show_price_chart":true,"show_fi":true,"chart_type":"candle","chart_line_color":"#EC8000","chart_candle_color":["#25B770","#E14040"],"fi":[]}
-                            </script>
-                            </div>
-                    </div>
-                </div>
-            </section>
             <section class="newshub_body_main">
                 <div class="newshub_main_head">
                     <div class="newshub_main_content">
-    
-                        <div id="subject_main" class="newshub_topic_out">
-                            <!-- news main left-->
-                        </div>
-
+                        <!-- place to read news -->
+                         <div class="newshub_search">
+                            <div class="newshub_search_container">
+                                <h3>Tìm kiếm</h3>
+                                <div class="search_holder">
+                                    <input class="data_input" type="search" placeholder="Tìm kiếm">
+                                    <button class="glass">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                                <p>Chuyên mục</p>
+                                <div class="dropdown">
+                                    <select class="select_holder" name="" id="">
+                                        <option value="">Tất cả</option>
+                                        <option value="Thời sự">Thời sự</option>
+                                        <option value="Kinh doanh">Kinh doanh</option>
+                                        <option value="Giải trí">Giải trí</option>
+                                        <option value="Thể thao">Thể thao</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="newshub_searched_content">
+                                <ul class="searched_contents">
+                                    <li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="business" href="#">Ông Tô Ân Xô và Trần Đăng Quỳnh làm trợ lý Tổng Bí thư, Chủ tịch nước Tô Lâm</a></h3>
+                                                <p><a class="normal" href="#">Khi bạn cho thêm thuộc tính multiple, lúc này bạn có thể chọn nhiều mục. Các trình duyệt trên Destop hầu hết hiện thị khi có tùy chọn này là một listbox, số mục hiện thị trong hộp listbox thiết lập thông qua thuộc tính size</a></p>
+                                        </div>
+                                        <img src="./image/img_news/imgs_main/business_00.jpg" alt="">
+                                    </li>
+                                    <li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="business" href="#">Ông Tô Ân Xô và Trần Đăng Quỳnh làm trợ lý Tổng Bí thư, Chủ tịch nước Tô Lâm</a></h3>
+                                                <p><a class="normal" href="#">Khi bạn cho thêm thuộc tính multiple, lúc này bạn có thể chọn nhiều mục. Các trình duyệt trên Destop hầu hết hiện thị khi có tùy chọn này là một listbox, số mục hiện thị trong hộp listbox thiết lập thông qua thuộc tính size</a></p>
+                                        </div>
+                                        <img src="./image/img_news/imgs_main/business_00.jpg" alt="">
+                                    </li>
+                                    <li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="business" href="#">Ông Tô Ân Xô và Trần Đăng Quỳnh làm trợ lý Tổng Bí thư, Chủ tịch nước Tô Lâm</a></h3>
+                                                <p><a class="normal" href="#">Khi bạn cho thêm thuộc tính multiple, lúc này bạn có thể chọn nhiều mục. Các trình duyệt trên Destop hầu hết hiện thị khi có tùy chọn này là một listbox, số mục hiện thị trong hộp listbox thiết lập thông qua thuộc tính size</a></p>
+                                        </div>
+                                        <img src="./image/img_news/imgs_main/business_00.jpg" alt="">
+                                    </li>
+                                    <li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="business" href="#">Ông Tô Ân Xô và Trần Đăng Quỳnh làm trợ lý Tổng Bí thư, Chủ tịch nước Tô Lâm</a></h3>
+                                                <p><a class="normal" href="#">Khi bạn cho thêm thuộc tính multiple, lúc này bạn có thể chọn nhiều mục. Các trình duyệt trên Destop hầu hết hiện thị khi có tùy chọn này là một listbox, số mục hiện thị trong hộp listbox thiết lập thông qua thuộc tính size</a></p>
+                                        </div>
+                                        <img src="./image/img_news/imgs_main/business_00.jpg" alt="">
+                                    </li>
+                                    <li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="business" href="#">Ông Tô Ân Xô và Trần Đăng Quỳnh làm trợ lý Tổng Bí thư, Chủ tịch nước Tô Lâm</a></h3>
+                                                <p><a class="normal" href="#">Khi bạn cho thêm thuộc tính multiple, lúc này bạn có thể chọn nhiều mục. Các trình duyệt trên Destop hầu hết hiện thị khi có tùy chọn này là một listbox, số mục hiện thị trong hộp listbox thiết lập thông qua thuộc tính size</a></p>
+                                        </div>
+                                        <img src="./image/img_news/imgs_main/business_00.jpg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                         </div>
                         <!-- Right -->
                         <ul id="newshub_list" class="newshub_sp_news">
                             <!-- list menu right -->
                         </ul>
-                    </div>
-                    <!-- Section -->
-                    <div id="beside" class="newshub_beside">
-                        <!-- Beside -->
                     </div>
                 </div>
             </section>
@@ -363,6 +378,6 @@
 
             <div class="newshub_footer_footer">&copy;2024 Bản quyền thuộc về NEWSHub</div>
         </footer>
-        <script src="./js/main.js" type="text/javascript"></script>
     </div>
 </body>
+</html>

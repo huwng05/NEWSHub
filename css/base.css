@@ -1,7 +1,7 @@
 :root {
-    --background-img: url(../image/background/img_background_main.jpg);
+    --background-img: url(../image/background/background2.jpg);
     --primary-color: #fff;
-    --cover-color: rgba(255,255,255,0.6);
+    --cover-color: rgba(255,255,255,0.4);
     --border-color: #999;
     --icon-cover: rgba(209, 206, 206, 1);
 }
@@ -44,16 +44,5 @@ a {
     to {
         opacity: 1; 
         top: calc(100% + 2px);
-    }
-}
-
-@keyframes slideLeft {
-    form {
-        opacity: 0;
-        left: -50px;
-    }
-    to {
-        opacity: 1;
-        left: 40px;
     }
 }

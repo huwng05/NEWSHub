@@ -143,6 +143,11 @@
     color: #999;
 }
 
+a:hover>.nav_user,
+a:hover>.login_nav {
+    color: #999!important;
+}
+
 .notify_container {
     position: absolute;
     background-color: #fff;
