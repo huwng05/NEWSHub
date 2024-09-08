@@ -42,9 +42,14 @@
     text-align: justify;
 }
 
-.content_normal>img {
+.content_picture {
+    width: 100%;
+}
+
+.content_picture>img {
     width: 100%;
     object-fit: cover;
+    margin: 10px 0;
 }
 
 .newshub_goback {

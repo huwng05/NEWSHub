@@ -522,11 +522,15 @@ a:hover>.login_nav {
 }
 
 .newshub_present {
-    background-color: #212121;
+    background-color: #212121 !important;
 }
 
-.newshub_present>.newshub_content_title {
-    color: red;
+.newshub_content_title>a {
+    color: #8d8c8c;
+}
+
+.newshub_present>.newshub_content_title>a {
+    color: red !important;
 }
 
 /* Clock */

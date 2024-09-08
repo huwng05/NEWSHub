@@ -3,6 +3,8 @@ window.onload = function() {
     const subject  = window.subject;
     const subject_item = window.subject_item;
     const contents = window.contents;
+    const linkWeb = "./readNews.html";
+    const linkSubject = "./subject.html";
     function addHotNews() {
         try {
             const newshubImg = document.getElementById('img_list');
@@ -13,7 +15,7 @@ window.onload = function() {
                 let random = window.getRandom();
                 listHTML_img += `<li class="newshub_img_item"><img src="${contents[subject[random[0]]][random[1]]['img']}" alt=""></li>`;
                 listHTML_content += `<li class="newshub_content_item">
-                                        <h2 class="newshub_content_title">${contents[subject[random[0]]][random[1]]['title']}</h2>
+                                        <h2 class="newshub_content_title"><a href="${linkWeb}" data-index="${random[1]}" class="${subject[random[0]]}">${contents[subject[random[0]]][random[1]]['title']}</a></h2>
                                         <p class="newshub_content_body">${contents[subject[random[0]]][random[1]]['content']}</p>
                                         <p class="newshub_content_footer">${contents[subject[random[0]]][random[1]]['footer']} <i class="hot_content_cmt fa-solid fa-comment"></i> 54</p>
                                     </li>
@@ -25,6 +27,7 @@ window.onload = function() {
         catch(error) {}
     }
     addHotNews();
+
 
     function changeNewsHot() {
         try {
@@ -143,10 +146,10 @@ window.onload = function() {
             let listHTML = ``;
             for(let i = 0; i < subject.length; i++) {
                 listHTML +=`<ul class="menu_container_list">
-                                <h3 class="menu_container_title"><a href="#" class="${subject[i]}">${subject_item[subject[i]][0]}</a></h3>
+                                <h3 class="menu_container_title"><a href="${linkSubject}" class="${subject[i]}">${subject_item[subject[i]][0]}</a></h3>
                             `;
                 for(let j = 1; j < subject_item[subject[i]].length;j++) {
-                    listHTML += `   <li class="menu_container_item"><a href="#" class="normal">${subject_item[subject[i]][j]}</a></li>
+                    listHTML += `   <li class="menu_container_item"><a href="${linkSubject}" class="${subject[i]}">${subject_item[subject[i]][j]}</a></li>
                                 `
                 }
                 listHTML += `</ul>`
@@ -183,41 +186,38 @@ window.onload = function() {
     listMenu();
 
 
+    let randomSubjet = window.getRandomSubject(6, 11);            
+    let randomNews =  window.getRandomSubject(5, 10);  
     function addNewsMain() {
         try {
-            const newhubSubject = document.getElementById('subject_main');
-            let randomSubjet = [];
-            window.getRandomSubject(randomSubjet, 3, 11);
-            let randomNews = [];
-            window.getRandomSubject(randomNews, 3, 10);
-            console.log("ok");
+            const newhubSubject = document.getElementById('subject_main');    
             let listHTML_main = ``;
             for(let i = 0; i < 3; i++) {
                 listHTML_main += `<div class="newshub_topic">
                                     <ul class="newshub_subjects">
-                                        <li class="newshub_subjects_item"><a href="#" style="color:${colors[subject[i]]}!important">${subject_item[subject[i]][0]}</a></li>
-                                        <li class="newshub_subjects_item"><a href="#" class="normal">${subject_item[subject[i]][1]}</a></li>
-                                        <li class="newshub_subjects_item"><a href="#" class="normal">${subject_item[subject[i]][2]}</a></li>
-                                        <li class="newshub_subjects_item"><a href="#" class="normal">${subject_item[subject[i]][3]}</a></li>
+                                        <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[randomSubjet[i]]}">${subject_item[subject[randomSubjet[i]]][0]}</a></li>
+                                        <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[randomSubjet[i]]}">${subject_item[subject[randomSubjet[i]]][1]}</a></li>
+                                        <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[randomSubjet[i]]}">${subject_item[subject[randomSubjet[i]]][2]}</a></li>
+                                        <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[randomSubjet[i]]}">${subject_item[subject[randomSubjet[i]]][3]}</a></li>
                                     </ul>
     
                                     <div class="newshub_subject">
                                         <div class="newshub_subject_content">
-                                            <img class="img_main" alt="" src="${contents[subject[i]][0]['img']}_0${0}.jpg">
+                                            <img class="img_main" alt="" src="${contents[subject[randomSubjet[i]]][randomNews[0]]['img']}">
                                             <div class="content">
-                                                <h3><a href="#" class="${subject[i]}">${contents[subject[i]][0]['title']}</a></h3>
-                                                <p class="content_body"><a href="#" class="normal">${contents[subject[i]][0]['content']}</a></p>
+                                                <h3><a href="${linkWeb}" data-index="${randomNews[0]}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[0]]['title']}</a></h3>
+                                                <p class="content_body"><a class="normal">${contents[subject[randomSubjet[i]]][randomNews[0]]['content']}</a></p>
                                                 <p class="hot_content_footer">
-                                                    ${contents[subject[i]][0]['footer']}
+                                                    ${contents[subject[randomSubjet[i]]][randomNews[0]]['footer']}
                                                     <i class="hot_content_cmt fa-solid fa-comment"></i>
                                                     <span>54</span>
                                                 </p>
                                             </div>
                                             <div class="content content_right">
-                                                <h3><a href="#" class="${subject[i]}">${contents[subject[i]][1]['title']}</a></h3>
-                                                <p class="content_body"><a href="#" class="normal">${contents[subject[i]][1]['content']}</a></p>
+                                                <h3><a data-index="${randomNews[1]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[1]]['title']}</a></h3>
+                                                <p class="content_body"><a class="normal">${contents[subject[randomSubjet[i]]][randomNews[1]]['content']}</a></p>
                                                 <p class="hot_content_footer">
-                                                    ${contents[subject[i]][1]['footer']}
+                                                    ${contents[subject[randomSubjet[i]]][randomNews[1]]['footer']}
                                                     <i class="hot_content_cmt fa-solid fa-comment"></i>
                                                     <span>54</span>
                                                 </p>
@@ -225,9 +225,9 @@ window.onload = function() {
                                         </div>
     
                                         <ul class="newshub_subjects_list">
-                                            <li class="newshub_subjects_sup"><a href="#" class="${subject[i]}">${contents[subject[i]][2]['title']}</a></li>
-                                            <li class="newshub_subjects_sup"><a href="#" class="${subject[i]}">${contents[subject[i]][3]['title']}</a></li>
-                                            <li class="newshub_subjects_sup"><a href="#" class="${subject[i]}">${contents[subject[i]][4]['title']}</a></li>
+                                            <li class="newshub_subjects_sup"><a data-index="${randomNews[2]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[2]]['title']}</a></li>
+                                            <li class="newshub_subjects_sup"><a data-index="${randomNews[3]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[3]]['title']}</a></li>
+                                            <li class="newshub_subjects_sup"><a data-index="${randomNews[4]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[4]]['title']}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -240,18 +240,18 @@ window.onload = function() {
 
     function addListMain() {
         try {
-            const random = [[2,4],[1,3],[2,5],[3,2],[4,2],[3,3],[2,3],[1,2]]
             const listNews = document.getElementById('newshub_list');
             let listNewsHTML = ``;
             for(let i = 0; i < 8; i++) {
+                let random = window.getRandom();
                 listNewsHTML += `<li class="newshub_sp_news_item">
-                                <h3><a href="#" class="${subject[random[i][0]]}">${contents[subject[random[i][0]]][random[i][1]]['title']}</a></h3>
+                                <h3><a data-index=${random[1]} href="${linkWeb}" class="${subject[random[0]]}">${contents[subject[random[0]]][random[1]]['title']}</a></h3>
                                 <div class="news_item_content">
-                                    <img class="content_img" src="./image/img_news/imgs_main/${subject[random[i][0]]}_${contents[subject[random[i][0]]][random[i][1]]['img']}.jpg" alt="">
+                                    <img class="content_img" src="${contents[subject[random[0]]][random[1]]['img']}" alt="">
                                     <div class="content_topic">
-                                        <p><a href="#" class="normal">${contents[subject[random[i][0]]][random[i][1]]['content']}</a></p>
+                                        <p><a class="normal">${contents[subject[random[0]]][random[1]]['content']}</a></p>
                                         <p class="hot_content_footer">
-                                            ${contents[subject[random[i][0]]][random[i][1]]['footer']}
+                                            ${contents[subject[random[0]]][random[1]]['footer']}
                                             <i class="hot_content_cmt fa-solid fa-comment"></i>
                                             <span>54</span>
                                         </p>
@@ -269,21 +269,21 @@ window.onload = function() {
         try {
             let listBeside = document.getElementById('beside');
             let besideHTML = ``;
-            for(let i = 0; i < 3; i++) {
+            for(let i = 3; i < 6; i++) {
                 besideHTML += `<div class="newshub_beside_sections">
                                     <div class="newshub_beside_subjects">
                                         <ul class="newshub_subjects">
-                                            <li class="newshub_subjects_item"><a href="#" style="color:${colors[subject[i]]}!important">${subject_item[subject[i]][0]}</a></li>
+                                            <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[randomSubjet[i]]}">${subject_item[subject[randomSubjet[i]]][0]}</a></li>
                                         </ul>
                                     </div>
                                     <div class="newshub_beside_main_section">
-                                        <img src="./image/img_news/imgs_main/${subject[i]}_0${3}.jpg" alt="img">
-                                        <h3><a href="#" class="${subject[i]}">${contents[subject[i]][3]['title']}</a></h3>
-                                        <p><a href="#" class="normal">${contents[subject[i]][3]['content']}</a></p>
+                                        <img src="${contents[subject[randomSubjet[i]]][randomNews[0]]['img']}" alt="img">
+                                        <h3><a data-index="${randomNews[0]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[0]]['title']}</a></h3>
+                                        <p><a class="normal">${contents[subject[randomSubjet[i]]][randomNews[0]]['content']}</a></p>
                                     </div>
                                     <div class="newshub_beside_main_section">
-                                        <h3><a href="#" class="${subject[i]}">${contents[subject[i]][4]['title']}</a></h3>
-                                        <p><a href="#" class="normal">${contents[subject[i]][4]['content']}</a></p>
+                                        <h3><a data-index="${randomNews[1]}" href="${linkWeb}" class="${subject[randomSubjet[i]]}">${contents[subject[randomSubjet[i]]][randomNews[1]]['title']}</a></h3>
+                                        <p><a class="normal">${contents[subject[randomSubjet[i]]][randomNews[1]]['content']}</a></p>
                                     </div>
                                 </div>
                             `
@@ -292,6 +292,30 @@ window.onload = function() {
         } catch(error) {}
     }
     addSupportNews();
+
+    function addContent() {
+        try {
+            const title = document.getElementsByClassName('newshub_read_title')[0];
+            const footer = document.getElementsByClassName('subject_header')[0];
+            const content = document.getElementsByClassName('content_normal');
+            const picture = document.getElementById('picture');
+            title.textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['title'];
+            footer.textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['footer'];
+            content[0].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content']
+            content[1].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content1']
+            content[2].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content2']
+            content[3].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content3']
+            content[4].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content4']
+            content[5].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content5']
+            content[6].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content6']
+            content[7].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content7']
+            content[8].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content8']
+            content[9].textContent = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['content9']
+            picture.src = contents[subject[localStorage.getItem("subject")]][localStorage.getItem("article")]['img'];
+        }
+        catch(error) {}
+    }
+    addContent();
 
     function answer() {
         try {
@@ -310,38 +334,78 @@ window.onload = function() {
                 })
             }
         }
-        catch(error) {
-            
-        }
+        catch(error) {}
     }
     answer();
 
-    function changeColorSubject() {
+    function addSubjectnews() {
         try {
-            let menuItems = document.getElementsByTagName('a');
-            for (let i = 0; i < menuItems.length; i++) {
-                menuItems[i].addEventListener('mouseover', function() {
-                    this.style.color = colors[this.className];
-                });
-                menuItems[i].addEventListener('mouseout', function() {
-                    if(this.className != '') {
-                        this.style.color = '#000';
-                    }
-                });
-            }
-        } catch(error) {}
+            const subjectMain = document.getElementById("subjectMain");
+            subjectMain.innerHTML = `<li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[localStorage.getItem("subject")]}">${subject_item[subject[localStorage.getItem("subject")]][0]}</a></li>
+                                            <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[localStorage.getItem("subject")]}">${subject_item[subject[localStorage.getItem("subject")]][1]}</a></li>
+                                            <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[localStorage.getItem("subject")]}">${subject_item[subject[localStorage.getItem("subject")]][2]}</a></li>
+                                            <li class="newshub_subjects_item"><a href="${linkSubject}" class="${subject[localStorage.getItem("subject")]}">${subject_item[subject[localStorage.getItem("subject")]][3]}</a></li>
+                                    `;
+            let random = window.getRandomSubject(8, 10);
+            const section1 = document.getElementById("section1");
+            section1.innerHTML = `<div class="newshub_sub_left">
+                                        <img src="${contents[subject[localStorage.getItem("subject")]][random[0]]['img']}" alt="">
+                                        <div class="subject_content">
+                                            <h3><a href="${linkWeb}" data-index="${random[0]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[0]]['title']}</a></h3>
+                                            <p><a href="#" class="normal">${contents[subject[localStorage.getItem("subject")]][random[0]]['content']}</a></p>
+                                        </div>
+                                    </div>
+                                    <ul class="newshub_sub_right">
+                                        <li class="sub_right_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[1]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[1]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[1]]['title']}</a></h3>
+                                            <p><a href="#" class="normal">${contents[subject[localStorage.getItem("subject")]][random[1]]['content']}</a></p>
+                                        </li>
+                                        <li class="wall"></li>
+                                        <li class="sub_right_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[2]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[2]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[2]]['title']}</a></h3>
+                                            <p><a href="#" class="normal">${contents[subject[localStorage.getItem("subject")]][random[2]]['content']}</a></p>
+                                        </li>
+                                        <li class="wall"></li>
+                                        <li class="sub_right_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[3]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[3]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[3]]['title']}</a></h3>
+                                            <p><a href="#" class="normal">${contents[subject[localStorage.getItem("subject")]][random[3]]['content']}</a></p>
+                                        </li>
+                                    </ul>
+                                        `
+            let section2 = document.getElementById("section2");
+            section2.innerHTML = `<div class="newshub_sub_top">
+                                        <img src="${contents[subject[localStorage.getItem("subject")]][random[4]]['img']}" alt="">
+                                        <div class="subject_content">
+                                           <h3><a href="${linkWeb}" data-index="${random[4]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[4]]['title']}</a></h3>
+                                            <p><a class="normal">${contents[subject[localStorage.getItem("subject")]][random[4]]['content']}</a></p>
+                                        </div>
+                                    </div>
+                                    <ul class="newshub_sub_under">
+                                        <li class="subject_under_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[5]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[5]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[5]]['title']}</a></h3>
+                                        </li>
+                                        <li class="subject_under_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[6]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[6]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[6]]['title']}</a></h3>
+                                        </li>
+                                        <li class="subject_under_item">
+                                            <img src="${contents[subject[localStorage.getItem("subject")]][random[7]]['img']}" alt="">
+                                            <h3><a href="${linkWeb}" data-index="${random[7]}" class="${subject[localStorage.getItem("subject")]}">${contents[subject[localStorage.getItem("subject")]][random[7]]['title']}</a></h3>
+                                        </li>    
+                                    </ul>
+                                    `;
+            console.log(section2);
+    
+        }
+        catch(error){}
     }
-    changeColorSubject();
 
-    function changeColorTitle() {
-        try {
-            const subjectList = document.getElementsByClassName('newshub_subjects');
-            for(value of subjectList) {
-                let subjectItem = value.getElementsByClassName('newshub_subjects_item')[0];
-                link = subjectItem.getElementsByTagName('a')[0];
-                subjectItem.style.setProperty('--after-bg-color',link.style.color);
-            }
-        } catch(error) {}
-    }
-    changeColorTitle();
+    addSubjectnews();
+    window.changeColorSubject();
+    window.changeColorTitle();
+    window.saveIndex();
 }

@@ -258,7 +258,7 @@ window.contents = {
             content8: "Sự hợp tác giữa các quốc gia trong khu vực có thể mở ra những cơ hội lớn cho startup công nghệ Đông Nam Á."
         },
         5: {
-            img: "https://mof.gov.vn/webcenter/cs/groups/vclcs_all_content/documents/tinbai/ynrj/mjyz/~edisp/~export/BTC263514~1/122919.jpg",
+            img: "https://hrchannels.com/uptalent/attachments/images/20230426/104233019_cong-ty-da-quoc-gia-8.jpg",
             title: "Các Công Ty Đa Quốc Gia Đầu Tư Mạnh Mẽ Vào Việt Nam",
             footer: "Kinh doanh",
             content: "Việt Nam đang trở thành điểm đến hấp dẫn cho các công ty đa quốc gia nhờ vào môi trường kinh doanh thuận lợi và lực lượng lao động trẻ.",
@@ -451,8 +451,8 @@ window.contents = {
             content9: `Tư vấn pháp lý khi cần thiết. Đối với các vấn đề phức tạp liên quan đến quyền sở hữu đất đai, việc tư vấn với chuyên gia pháp lý có thể giúp bạn đưa ra quyết định đúng đắn.`
         },
         8: {
-            img: `https://example.com/law-image9.jpg`,
-            title: `https://ipcs.mpi.gov.vn/wp-content/uploads/2021/04/2.-So-do-Guide-2020.png`,
+            img: `https://ipcs.mpi.gov.vn/wp-content/uploads/2021/04/2.-So-do-Guide-2020.png`,
+            title: `Sổ đỏ 2024`,
             footer: `Luật pháp`,
             content: `Đầu tư nước ngoài được quy định bởi các luật và quy định pháp lý nhằm tạo điều kiện thuận lợi và bảo vệ quyền lợi của nhà đầu tư. Hiểu rõ các quy định này giúp đảm bảo sự tuân thủ và tối ưu hóa các cơ hội đầu tư.`,
             content1: `Nắm rõ các quy định về cấp phép và thủ tục đầu tư nước ngoài. Đảm bảo rằng bạn thực hiện đầy đủ các thủ tục và yêu cầu để được cấp phép đầu tư theo quy định của pháp luật.`,
@@ -466,8 +466,8 @@ window.contents = {
             content9: `Sử dụng các dịch vụ tư vấn và hỗ trợ chuyên nghiệp. Các chuyên gia tư vấn có thể cung cấp thông tin và hướng dẫn chi tiết để giúp bạn navigate các quy định đầu tư nước ngoài.`
         },
         9: {
-            img: `https://example.com/law-image10.jpg`,
-            title: `https://cdn.thuvienphapluat.vn/uploads/tintuc/2023/11/09/quyen-nghia-vu-cua-nguoi-tieu-dung.jpeg`,
+            img: `https://cdn.thuvienphapluat.vn/uploads/tintuc/2023/11/09/quyen-nghia-vu-cua-nguoi-tieu-dung.jpeg`,
+            title: `Quyền nghĩa vụ của người tiêu dùng`,
             footer: `Luật pháp`,
             content: `Quyền lợi của người tiêu dùng được bảo vệ bởi các quy định pháp luật nhằm đảm bảo sự công bằng và minh bạch trong giao dịch mua bán. Các quy định này giúp bảo vệ quyền lợi và sức khỏe của người tiêu dùng.`,
             content1: `Đảm bảo rằng các sản phẩm và dịch vụ đáp ứng các tiêu chuẩn chất lượng và an toàn. Quyền lợi của người tiêu dùng bao gồm việc nhận được sản phẩm và dịch vụ đạt tiêu chuẩn và không gây hại.`,
@@ -484,8 +484,8 @@ window.contents = {
 
     science: {
         0: {
-            img: `https://example.com/science-image1.jpg`,
-            title: `https://image.nhandan.vn/Uploaded/2024/athlrainagbna/2022_12_31/space-4066.jpg`,
+            img: `https://i1-vnexpress.vnecdn.net/2016/10/15/2-1476499916.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=32oimnbul5_K2snmCOn9Og`,
+            title: `Thành tựu khám phá vụ trụ của Nasa`,
             footer: `Khoa học`,
             content: `Khám phá vũ trụ đã đạt được nhiều thành tựu ấn tượng trong những năm gần đây. Từ việc phát hiện các hành tinh ngoài hệ mặt trời đến việc quan sát các lỗ đen, các nghiên cứu này mở ra nhiều cơ hội mới cho nhân loại.`,
             content1: `Các tàu vũ trụ như James Webb đã cung cấp những hình ảnh chi tiết về các dải ngân hà xa xôi, giúp các nhà khoa học hiểu rõ hơn về sự hình thành và sự phát triển của các hệ sao.`,
@@ -1713,16 +1713,62 @@ window.getRandom = function () {
     return [topic, article]
 }
 
-window.getRandomSubject = function(arrRandom, count, length) {
+window.getRandomSubject = function(count, length) {
+    let arrRandom=[];
     for (let j = 0; j < count; j++) {
         let number;
         while(true) {
             number = Math.floor(Math.random()*length);
             let i = 0;
-            if(!arrRandom.includes(number)) {
+            if(arrRandom.length == 0) {
                 arrRandom.push(number);
-                return number;
+                break;
             }
+            else {
+                while(i < arrRandom.length && arrRandom[i] != number) i++;
+                if(i>= arrRandom.length) {
+                    arrRandom.push(number); 
+                    break;
+                }
+            } 
         }  
     }
+    return arrRandom;
+}
+
+window.saveIndex = function() {
+    const linked = document.getElementsByTagName('a');
+    for(let i = 0; i < linked.length; i++) {
+        linked[i].addEventListener ('click', function() {
+            localStorage.setItem("subject", window.subject.indexOf(this.className));
+            localStorage.setItem("article", parseInt(this.getAttribute('data-index')));
+        })
+    }
+}
+
+window.changeColorSubject = function() {
+    try {
+        let menuItems = document.getElementsByTagName('a');
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].addEventListener('mouseover', function() {
+                this.style.color = colors[this.className];
+            });
+            menuItems[i].addEventListener('mouseout', function() {
+                if(this.className != '') {
+                    this.style.color = '';
+                }
+            });
+        }
+    } catch(error) {}
+}
+
+window.changeColorTitle = function() {
+    try {
+        const subjectList = document.getElementsByClassName('newshub_subjects');
+        for(value of subjectList) {
+            let subjectItem = value.getElementsByClassName('newshub_subjects_item')[0];
+            link = subjectItem.getElementsByTagName('a')[0];
+            subjectItem.style.setProperty('--after-bg-color',window.colors[link.className]);
+        }
+    } catch(error) {}
 }

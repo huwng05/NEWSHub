@@ -9,9 +9,9 @@
     <link rel="shortcut icon" href="./image/background/logo.png">
     <link rel="stylesheet" href="./css/reponsive.css">
     <link rel="stylesheet" href="./css/search.css">
-    <title>NEWSHub</title>
+    <title>NEWSHub>search</title>
+    <script src="./js/data.js" type="text/javascript"></script>
     <script src="./js/main.js" type="text/javascript"></script>
-    <script src="./js/read.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="newshub">
@@ -135,18 +135,17 @@
                     </div>
                 </a>
                 <ul class="menu_list">
-                    <li class="menu_items"><a href="#" class="news">Thời sự</a></li>
-                    <li class="menu_items"><a href="#" class="world">Thế giới</a></li>
-                    <li class="menu_items"><a href="#" class="video">Video</a></li>
-                    <li class="menu_items"><a href="#" class="business">Kinh doanh</a></li>
-                    <li class="menu_items"><a href="#" class="law">Pháp luật</a></li>
-                    <li class="menu_items"><a href="#" class="science">Khoa học</a></li>
-                    <li class="menu_items"><a href="#" class="entertainment">Giải trí</a></li>
-                    <li class="menu_items"><a href="#" class="sport">Thể thao</a></li>
-                    <li class="menu_items"><a href="#" class="education">Giáo dục</a></li>
-                    <li class="menu_items"><a href="#" class="health">Sức khỏe</a></li>
-                    <li class="menu_items"><a href="#" class="life">Đời sống</a></li>
-                    <li class="menu_items"><a href="#" class="travel">Du lịch</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="news">Thời sự</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="world">Thế giới</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="business">Kinh doanh</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="law">Pháp luật</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="science">Khoa học</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="entertainment">Giải trí</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="sport">Thể thao</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="education">Giáo dục</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="health">Sức khỏe</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="life">Đời sống</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="travel">Du lịch</a></li>
                 </ul>
                 <i class="menu_bars fa-solid fa-bars"></i>
                 <div class="menu_container">
@@ -228,24 +227,30 @@
             <section class="newshub_body_main">
                 <div class="newshub_main_head">
                     <div class="newshub_main_content">
-                        <!-- place to read news -->
+                        <!-- place to search news -->
                          <div class="newshub_search">
                             <div class="newshub_search_container">
                                 <h3>Tìm kiếm</h3>
                                 <div class="search_holder">
-                                    <input class="data_input" type="search" placeholder="Tìm kiếm">
-                                    <button class="glass">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input id="input" class="data_input" type="search" placeholder="Tìm kiếm">
+                                    <button ip="btnSearch" class="glass">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </div>
                                 <p>Chuyên mục</p>
                                 <div class="dropdown">
-                                    <select class="select_holder" name="" id="">
+                                    <select class="select_holder" name="" id="select">
                                         <option value="">Tất cả</option>
                                         <option value="Thời sự">Thời sự</option>
+                                        <option value="Thế giới">Thế giới</option>
                                         <option value="Kinh doanh">Kinh doanh</option>
+                                        <option value="Pháp luật">Pháp luật</option>
+                                        <option value="Khoa học">Khoa học</option>
                                         <option value="Giải trí">Giải trí</option>
                                         <option value="Thể thao">Thể thao</option>
+                                        <option value="Giáo dục">Giáo dục</option>
+                                        <option value="Sức khỏe">Sức khỏe</option>
+                                        <option value="Đời sống">Đời sống</option>
                                     </select>
                                 </div>
                             </div>

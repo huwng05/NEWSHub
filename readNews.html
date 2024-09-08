@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="./css/reponsive.css">
     <link rel="stylesheet" href="./css/read.css">
     <title>NEWSHub</title>
-    <script src="./js/main.js" type="text/javascript"></script>
-    <script src="./js/read.js" type="text/javascript"></script>
+    <script src="./js/data.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="newshub">
@@ -135,18 +134,17 @@
                     </div>
                 </a>
                 <ul class="menu_list">
-                    <li class="menu_items"><a href="#" class="news">Thời sự</a></li>
-                    <li class="menu_items"><a href="#" class="world">Thế giới</a></li>
-                    <li class="menu_items"><a href="#" class="video">Video</a></li>
-                    <li class="menu_items"><a href="#" class="business">Kinh doanh</a></li>
-                    <li class="menu_items"><a href="#" class="law">Pháp luật</a></li>
-                    <li class="menu_items"><a href="#" class="science">Khoa học</a></li>
-                    <li class="menu_items"><a href="#" class="entertainment">Giải trí</a></li>
-                    <li class="menu_items"><a href="#" class="sport">Thể thao</a></li>
-                    <li class="menu_items"><a href="#" class="education">Giáo dục</a></li>
-                    <li class="menu_items"><a href="#" class="health">Sức khỏe</a></li>
-                    <li class="menu_items"><a href="#" class="life">Đời sống</a></li>
-                    <li class="menu_items"><a href="#" class="travel">Du lịch</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="news">Thời sự</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="world">Thế giới</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="business">Kinh doanh</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="law">Pháp luật</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="science">Khoa học</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="entertainment">Giải trí</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="sport">Thể thao</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="education">Giáo dục</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="health">Sức khỏe</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="life">Đời sống</a></li>
+                    <li class="menu_items"><a href="./subject.html" class="travel">Du lịch</a></li>
                 </ul>
                 <i class="menu_bars fa-solid fa-bars"></i>
                 <div class="menu_container">
@@ -229,7 +227,7 @@
                 <div class="newshub_main_head">
                     <div class="newshub_main_content">
                         <!-- place to read news -->
-                        <div class="newshub_read">
+                        <div id="readPlace" class="newshub_read">
                             <div class="newhub_read_head">
                                 <p class="subject_header">Giáo dục</p>
                                 <p class="subject_date">Thứ 5, 15/8/2024</p>
@@ -241,10 +239,11 @@
                                 <li class="content_normal">Thời tiết hôm nay nắng nóng, chừng 28-29 độ từ sáng sớm. Hầu hết trường tập trung học sinh vào lúc 6h30, khoảng 7h30-8h, thầy và trò sẽ bước vào tiết học đầu tiên.</li>
                                 <li class="content_normal">Tại trường Tiểu học Nguyễn Viết Xuân, quận Cầu Giấy, học sinh và thầy cô chung tâm trạng háo hức. Năm nay, trường lần đầu tuyển sinh với tổng 650 em. Ở cổng, giáo viên xếp thành hai hàng để chào đón học trò.</li>
                                 <li class="content_normal">Nhà cách trường vài chục mét nhưng từ 6h, Trần Tú Anh và Hồ Ngọc Thảo An, lớp 1A4, đã giục mẹ đưa đến trường.</li>
-                                <li class="content_normal"><img src="./image/img_news/imgs_main/entertainment_00.jpg" class="img_read" alt=""></li>
+                                <li class="content_picture"><img id="picture" src="./image/img_news/imgs_main/entertainment_00.jpg" class="img_read" alt=""></li>
                                 <li class="content_normal">"Nghe tiếng nhạc rộn ràng từ trường nên con nên muốn đến sớm để gặp bạn bè mới và chụp ảnh", cô bé nói.</li>
                                 <li class="content_normal">Bà Vũ Thị Ánh Tuyết, Hiệu trưởng, cho biết lễ khai giảng có phần kết hợp đặc biệt giữa các thầy cô giáo, phụ huynh và học sinh với màn trống hội.</li>
                                 <li class="content_normal">Chị Nguyễn Thị Huyền, đại diện phụ huynh lớp 1A4, nói "háo hức không kém học sinh". Chị cũng mong chờ khoảnh khắc con và các bạn được xướng tên để vẫy cờ, hoa mừng năm học mới. "Tôi mong con sẽ có buổi lễ ý nghĩa, đáng nhớ cũng như 12 năm học suôn sẻ phía trước", chị nói.</li>
+                                <li class="content_normal">Đặng Ngọc Diệp, lớp 9A1, dự định đặt nguyện vọng 1 vào lớp 10 trường THPT Trần Phú, một trong những trường lấy điểm chuẩn cao nhất thành phố. Nữ sinh xác định đây là năm học quyết định, cần đầu tư và dành nhiều thời gian cho việc học hơn.</li>
                                 <li class="content_normal">Đặng Ngọc Diệp, lớp 9A1, dự định đặt nguyện vọng 1 vào lớp 10 trường THPT Trần Phú, một trong những trường lấy điểm chuẩn cao nhất thành phố. Nữ sinh xác định đây là năm học quyết định, cần đầu tư và dành nhiều thời gian cho việc học hơn.</li>
                             </ul>
                             <div class="newshub_goback">
@@ -458,5 +457,7 @@
             <div class="newshub_footer_footer">&copy;2024 Bản quyền thuộc về NEWSHub</div>
         </footer>
     </div>
+    <script src="./js/read.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
 </body>
 </html>

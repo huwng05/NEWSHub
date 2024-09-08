@@ -120,7 +120,7 @@
         margin: 0;
         box-sizing: border-box;
         position: fixed;
-        top: 0;
+        top: 0px;
         left: 40px;
         animation:  slideLeft 1s linear;
         /* display: block; */
