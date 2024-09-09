@@ -41,7 +41,7 @@ window.onload = function() {
             if(index == 0) {
                 slides_content[index].classList.add('newshub_present')
             }
-            function scrollUp() {
+            function scrollUp() {                                    
                 slides_content[index].classList.remove('newshub_present')
                 index = (index - 1) % totalSlide;
                 slides_content[index].classList.add('newshub_present')
@@ -58,7 +58,7 @@ window.onload = function() {
                     document.getElementById('scroll_down').style.visibility = 'visible';
                 }
                 const offset = -index*100/slides.length;
-                const offset_content = -index*50;
+                const offset_content = -index*100/slides_content.length;
                 slider.style.transition = `transform ${transition}ms linear`;
                 slider.style.transform = `translateY(${offset}%)`;
                 slider_content.style.transition = `transform ${transition}ms linear`;
@@ -101,6 +101,7 @@ window.onload = function() {
     function scrollMenu() {
         try {
             const menu = document.getElementById('menu');
+            const onTop = document.getElementById('goTopBtn');
             window.addEventListener('scroll', function() {
                 const scrollTop = document.documentElement.scrollTop;
                 if(scrollTop > menu.offsetTop + 15) {
@@ -110,6 +111,7 @@ window.onload = function() {
                     this.document.getElementById('new').style.display = 'flex';
                     menu.style.boxShadow = '0px 6px 6px 1px var(--border-color)';
                     menu.style.borderRadius = '0 0 10px 10px';
+                    onTop.style.display = 'block';
                 }
                 else {
                     menu.classList.remove('menu_scroll');
@@ -118,6 +120,7 @@ window.onload = function() {
                     this.document.getElementById('new').style.display = 'none';
                     menu.style.boxShadow = '0px 1px 1px 1px var(--border-color)'
                     menu.style.borderRadius = '44px';
+                    onTop.style.display = 'none';
                 }
             })
         } catch (error) {}
@@ -293,6 +296,113 @@ window.onload = function() {
     }
     addSupportNews();
 
+    function search() {
+        try {
+            const input = document.getElementById('input');
+            const btnSearch = document.getElementById('btnSearch');
+            const select = document.getElementById('select');
+            const resultsSearch = document.getElementById('resultSearch')
+            let results = [];
+            function calSorce(text, keyword) {
+                let sorce = 0;
+                let lowerText = text.toLowerCase();
+                let lowerKey = keyword.toLowerCase();
+                keywordIndex = lowerText.indexOf(lowerKey);
+                if(keywordIndex!== -1 ) sorce +=lowerText.length - keywordIndex;
+                return sorce
+            }
+    
+            function searchArticle(keyword) {
+                if(select.value!=='all') {
+                    for(let i = 0; i < 10; i++) {
+                        let title = contents[select.value][i]['title'];
+                        let article = contents[select.value][i]['content'];
+                        let titleSorce = calSorce(title,keyword);
+                        let articleSorce = calSorce(article, keyword)
+                        if(titleSorce*0.7 + articleSorce*0.3 !== 0) {
+                            results.push({
+                                subject: subject.indexOf(select.value),
+                                article: i,
+                                sorce: titleSorce*0.7 + articleSorce*0.3,
+                            })
+                        }
+                    }
+                }
+                else {
+                    for(let i in contents) {
+                        for (let j in contents[i]) {
+                            let title = contents[i][j]['title'];
+                            let article = contents[i][j]['content'];
+                            let titleSorce = calSorce(title,keyword);
+                            let articleSorce = calSorce(article, keyword);
+                            if(titleSorce*0.7 + articleSorce*0.3 !== 0) {
+                                results.push({
+                                    subject: i,
+                                    article: j,
+                                    sorce: titleSorce*0.7 + articleSorce*0.3,
+                                })
+                            }
+                        }
+                    }
+                }
+                return;
+            }
+    
+            btnSearch.addEventListener('click', function() {
+                results = [];
+                searchArticle(input.value);
+                results.sort(function(a,b) {
+                    return b.sorce - a.sorce;
+                })
+                let listHTML = ``;
+                for(let i=0; i < results.length; i++) {
+                    listHTML+= `<li class="search_li">
+                                    <div class="search_content">
+                                            <h3><a class="${results[i]['subject']}" data-index="${results[i]['article']}" href="${linkWeb}">${contents[results[i]['subject']][results[i]['article']]['title']}</a></h3>
+                                            <p><a class="normal">${contents[results[i]['subject']][results[i]['article']]['content']}</a></p>
+                                    </div>
+                                    <img src="${contents[results[i]['subject']][results[i]['article']]['img']}" alt="">
+                                </li>
+                                `
+                }
+                resultsSearch.innerHTML = listHTML;
+                addSubjectnews();
+                window.changeColorSubject();
+                window.changeColorTitle();
+                window.saveIndex();
+            })
+    
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    results = [];
+                    searchArticle(input.value);
+                    results.sort(function(a,b) {
+                        return b.sorce - a.sorce;
+                    })
+                    let listHTML = ``;
+                    console.log(results[0]['subject']);
+                    for(let i=0; i < results.length; i++) {
+                        listHTML+= `<li class="search_li">
+                                        <div class="search_content">
+                                                <h3><a class="${results[i]['subject']}" data-index="${results[i]['article']}" href="${linkWeb}">${contents[results[i]['subject']][results[i]['article']]['title']}</a></h3>
+                                                <p><a class="normal">${contents[results[i]['subject']][results[i]['article']]['content']}</a></p>
+                                        </div>
+                                        <img src="${contents[results[i]['subject']][results[i]['article']]['img']}" alt="">
+                                    </li>
+                                    `
+                    }
+                    resultsSearch.innerHTML = listHTML;
+                    addSubjectnews();
+                    window.changeColorSubject();
+                    window.changeColorTitle();
+                    window.saveIndex();
+                }
+            });
+        }
+        catch(error) {}
+    }
+    search();
+
     function addContent() {
         try {
             const title = document.getElementsByClassName('newshub_read_title')[0];
@@ -398,7 +508,6 @@ window.onload = function() {
                                         </li>    
                                     </ul>
                                     `;
-            console.log(section2);
     
         }
         catch(error){}
@@ -407,5 +516,6 @@ window.onload = function() {
     addSubjectnews();
     window.changeColorSubject();
     window.changeColorTitle();
+    window.onTopFunction();
     window.saveIndex();
 }

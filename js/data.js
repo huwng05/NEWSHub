@@ -1772,3 +1772,18 @@ window.changeColorTitle = function() {
         }
     } catch(error) {}
 }
+
+window.onToTop = function() {
+    onTopFunction();
+}
+
+function onTopFunction() {
+    const btn = document.getElementById('goTopBtn');
+    btn.addEventListener('click', function() {
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
+    })
+    
+}
