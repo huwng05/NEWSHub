@@ -58,7 +58,7 @@ window.onload = function() {
                     document.getElementById('scroll_down').style.visibility = 'visible';
                 }
                 const offset = -index*100/slides.length;
-                const offset_content = -index*100/slides_content.length;
+                const offset_content = -index*50;
                 slider.style.transition = `transform ${transition}ms linear`;
                 slider.style.transform = `translateY(${offset}%)`;
                 slider_content.style.transition = `transform ${transition}ms linear`;
@@ -82,7 +82,7 @@ window.onload = function() {
                     document.getElementById('scroll_up').style.display = 'block';
                 }
                 const offset = -index*100/slides.length;
-                const offset_content = -index*100/slides.length;
+                const offset_content = -index*50;
                 slider.style.transition = `transform ${transition}ms linear`;
                 slider.style.transform = `translateY(${offset}%)`;
                 slider_content.style.transition = `transform ${transition}ms linear`;
