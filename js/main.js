@@ -82,7 +82,7 @@ window.onload = function() {
                     document.getElementById('scroll_up').style.display = 'block';
                 }
                 const offset = -index*100/slides.length;
-                const offset_content = -index*50;
+                const offset_content = -index*100/slides.length;
                 slider.style.transition = `transform ${transition}ms linear`;
                 slider.style.transform = `translateY(${offset}%)`;
                 slider_content.style.transition = `transform ${transition}ms linear`;
@@ -304,12 +304,12 @@ window.onload = function() {
             const resultsSearch = document.getElementById('resultSearch')
             let results = [];
             function calSorce(text, keyword) {
-                let sorce = 0;
+                let score = 0;
                 let lowerText = text.toLowerCase();
                 let lowerKey = keyword.toLowerCase();
                 keywordIndex = lowerText.indexOf(lowerKey);
-                if(keywordIndex!== -1 ) sorce +=lowerText.length - keywordIndex;
-                return sorce
+                if(keywordIndex!== -1 ) score +=lowerText.length - keywordIndex;
+                return score
             }
     
             function searchArticle(keyword) {
